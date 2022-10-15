@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Detail</title>
+</head>
+<body>
+    <h2>Students Details</h2>
+    <table border="1" width="75%">
+        <tr>
+            <th>Student Id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+        </tr>
+        <% if(students.length > 0) {%>
+            <% for(let i = 0; i < students.length; i++) {%>
+                    <tr>
+                        <td><%- students[i].id %></td>
+                        <td><%- students[i].fullname %></td>
+                        <td><%- students[i].email %></td>
+                        <td><%- students[i].mobile %></td>
+                    </tr>
+                <% } %>
+        <% } else { %>
+            <h5>Students data not found</h5>
+        <% } %>
+    </table>
+    <input type="submit" name="add" value="Add Student">
+</body>
+</html>
